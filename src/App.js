@@ -9,7 +9,6 @@ import { Portfolio } from "./Routes/Portfolio/Portfolio.js"
 import { Contato } from "./Routes/Contato/Contato.js"
 import { Nav } from "./Components/Nav/Nav.js"
 import { AtendimentoOnline } from "./Components/Whatsapp/Whatsapp.js"
-import { ContatoFooter } from "./Components/Contato/Contato.js"
 import { Footer } from "./Components/Footer/Footer.js"
 import {
   BrowserRouter as Router,
@@ -67,14 +66,9 @@ function App() {
     return (
       <Router>
         <Route path="/about" exact component={About} />
-        <Route path="/servicos">
-            <Service />
-          </Route>
-        <Layout>
-          <Route path="/portfolio" component={Portfolio} />
-          <Route path="/contato" component={Contato} />
-
-        </Layout>
+        <Route path="/servicos" component={Service} />
+        <Route path="/portfolio" component={Portfolio} />
+        <Route path="/contato" component={Contato} />
       </Router >
     )
   }
@@ -92,7 +86,6 @@ function App() {
             <Route component={AuthenticatedRoutes} />
           </Switch>
           <AtendimentoOnline isOpenAtendOnline={isOpenAtendOnline} setIsOpenAtendOnline={setisOpenAtendOnline} />
-          <ContatoFooter />
           <Footer />
         </ThemeProvider>
       </Router>
