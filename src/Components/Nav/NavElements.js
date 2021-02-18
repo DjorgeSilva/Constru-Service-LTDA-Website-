@@ -10,7 +10,8 @@ export const NavMenu = styled.nav`
     background-color: ${props => props.theme.primary_color};
     border-bottom: .4rem solid transparent;
     border-image: url(${border_nav}) 30 round;
-    z-index:10;
+    z-index:1000000;
+    position: fixed;
 `;
 
 export const NavWrapper = styled.div`
