@@ -9,7 +9,7 @@ export const ContainerAbout = styled.div`
 
 export const Banner = styled.div`
     width: 100%;
-    height: 50vh;
+    height: 70vh;
     overflow: hidden;
     margin-bottom: 50px;
     img{

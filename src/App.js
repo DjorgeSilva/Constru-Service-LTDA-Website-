@@ -14,8 +14,8 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
 } from "react-router-dom";
+import ScrollToTop from "./Components/ScrollToTop/ScrollToTop"
 
 const theme = {
   primary_color: "#000",
@@ -64,11 +64,14 @@ function App() {
 
   const AuthenticatedRoutes = () => {
     return (
-      <Router>
+      <Router basename={process.env.PUBLIC_URL}>
+        <Route path="/" exact>
+          <Home />
+        </Route>
         <Route path="/about" exact component={About} />
-        <Route path="/servicos" component={Service} />
-        <Route path="/portfolio" component={Portfolio} />
-        <Route path="/contato" component={Contato} />
+        <Route path="/servicos" exact component={Service} />
+        <Route path="/portfolio" exact component={Portfolio} />
+        <Route path="/contato" exact component={Contato} />
       </Router >
     )
   }
@@ -76,18 +79,23 @@ function App() {
   return (
     <>
       <Router>
-        <ThemeProvider theme={theme}>
-          <GlobalStyle />
-          <Nav isOpen={isOpen} toggleCloseIcon={toggleCloseIcon} sizeWindow={size.width} />
-          <Switch>
-            <Route path="/" exact>
-              <Home sizeWindow={size.width} />
-            </Route>
-            <Route component={AuthenticatedRoutes} />
-          </Switch>
-          <AtendimentoOnline isOpenAtendOnline={isOpenAtendOnline} setIsOpenAtendOnline={setisOpenAtendOnline} />
-          <Footer />
-        </ThemeProvider>
+        <ScrollToTop>
+          <ThemeProvider theme={theme}>
+            <GlobalStyle />
+            <Nav isOpen={isOpen} toggleCloseIcon={toggleCloseIcon} sizeWindow={size.width} />
+
+            <Switch>
+              <Route path="/" exact>
+                <Home isOpen={isOpen} />
+              </Route>
+              <Route component={AuthenticatedRoutes} />
+            </Switch>
+
+            <AtendimentoOnline isOpenAtendOnline={isOpenAtendOnline} setIsOpenAtendOnline={setisOpenAtendOnline} />
+            <Footer />
+
+          </ThemeProvider>
+        </ScrollToTop>
       </Router>
     </>
   );

@@ -3,6 +3,7 @@ import { Slider } from "../../Components/Slider/Slider.js"
 import { About } from "../../Components/About/About.js"
 import { Servicos } from "../../Components/Servicos/Servicos.js"
 import { Portfolios } from "../../Components/Portfolio/Portfolio.js"
+import { ContatoFooter } from "../../Components/Contato/Contato"
 
 export const Home = ({sizeWindow}) => {
 
@@ -11,7 +12,8 @@ export const Home = ({sizeWindow}) => {
             <Slider />
             <About />
             <Servicos sizeWindow={sizeWindow}/>
-            <Portfolios sizeWindow={sizeWindow}/>
+            <Portfolios sizeWindow={sizeWindow}/>"
+            <ContatoFooter />
         </div>
     )
 }

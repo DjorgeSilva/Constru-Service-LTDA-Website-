@@ -11,6 +11,7 @@ import {
     InnerItem,
     ItemGrid
 } from "./AboutElements.js"
+import { ContatoFooter } from "../../Components/Contato/Contato"
 
 
 export const About = () => {
@@ -78,6 +79,7 @@ export const About = () => {
                     </Layout>
                 </Main>
             </ContainerAbout>
+            <ContatoFooter />
         </>
     )
 }

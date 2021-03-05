@@ -24,6 +24,7 @@ export const Contato = () => {
 
                         <Form>
                             <h1>Contato</h1>
+                            <h2>Teste</h2>
 
                             <label htmlFor="name">Nome</label>
                             <input type="text" id="name" />

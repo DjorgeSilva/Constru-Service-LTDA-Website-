@@ -10,7 +10,7 @@ export const Container = styled.div`
 
 export const Banner = styled.div`
     width: 100%;
-    height: 50vh;
+    height: 70vh;
     overflow: hidden;
     margin-bottom: 50px;
     color: ${props => props.theme.secundary_color};
@@ -19,19 +19,6 @@ export const Banner = styled.div`
         height: 100%;
         object-fit: cover;
         position: relative;
-        animation: zoomBanner 30s infinite;
-
-        @keyframes zoomBanner{
-            0%{
-                transform: scale(1)
-            }
-            50%{
-                transform: scale(2)
-            }
-            100%{
-                transform: scale(1)
-            }
-        }
     }
 
     h1{
